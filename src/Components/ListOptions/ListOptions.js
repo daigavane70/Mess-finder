@@ -1,31 +1,53 @@
 import React from 'react';
-import Card from './Cards/Cards';
+import Card from './Components/Card';
+import {Paper,makeStyles} from '@material-ui/core/';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './Assets/Styles/ListOptions.css';
+import Filter from './Components/Filter';
+import {defaultList} from './Components/data';
 
-let defaultList = [
-    {
-        name: 'Name1',
-        address: 'Survey No. 27, Near, Trimurti Chowk, Bharati Vidyapeeth Campus, Dhankawadi, Pune, Maharashtra 411043',
-        rating: 4,
-        monthlyPrices: 5000, 
+const useStyles = makeStyles((theme) => ({
+    root: {
+      flexGrow: 1
     },
-    {
-        name: 'Name2',
-        address: 'Survey No. 27, Near, Trimurti Chowk, Bharati Vidyapeeth CampusSurvey No. 27, Near, Trimurti Chowk, Bharati Vidyapeeth Campus, Dhankawadi, Pune, Maharashtra 411043',
-        rating: 4,
-        monthlyPrices: 3000, 
-    },
-    {
-        name: 'Name3',
-        address: 'Trimurti Chowk, Bharati Vidyapeeth Campus, Dhankawadi, Pune, Maharashtra 411043 Survey No. 27, Near, Trimurti Chowk, Bharati Vidyapeeth Campus, Dhankawadi, Pune, Maharashtra 411043',
-        rating: 4,
-        monthlyPrices: 4500, 
+    rows: {
+      textAlign: "center",
+      color: theme.palette.text.secondary
     }
-]
+  }));
 
 const ListOptions = () => {
-    return (
 
-        defaultList.map( eve => { return( <Card details={eve}></Card> ) })      
+    const classes = useStyles();
+
+    let cards = defaultList.map( eve => {
+         return(    
+             <Card details={eve}></Card>
+         ) });
+
+    return (
+        <div className='container-fluid text-center'>
+
+            <h2>Search Results</h2>
+
+            <div className='row'>
+
+                {/* for Filters */}
+                <div className='col-lg-4 col-md-4 filters'>
+                    <Filter/>
+                </div>
+
+                {/* for Cards */}
+                <div className='col-lg-8 text-center cards'>
+                    <hr/> Cards <hr/>
+                    <div className='container-fluid row'>
+                        {cards}
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
     )
 }
 
