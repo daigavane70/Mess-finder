@@ -1,4 +1,4 @@
-import ListOptions from './Components/ListOptions/ListOptions';
+import ListOptions from './pages/ListOptions/ListOptions';
 
 function App() {
   return (

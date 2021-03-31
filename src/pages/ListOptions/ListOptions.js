@@ -1,24 +1,11 @@
 import React from 'react';
-import Card from './Components/Card';
-import {Paper,makeStyles} from '@material-ui/core/';
+import Card from '../../components/Card';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './Assets/Styles/ListOptions.css';
-import Filter from './Components/Filter';
-import {defaultList} from './Components/data';
-
-const useStyles = makeStyles((theme) => ({
-    root: {
-      flexGrow: 1
-    },
-    rows: {
-      textAlign: "center",
-      color: theme.palette.text.secondary
-    }
-  }));
+import '../../assets/Styles/ListOptions.css';
+import {defaultList} from '../../components/data';
+import Filter from '../../components/Filter';
 
 const ListOptions = () => {
-
-    const classes = useStyles();
 
     let cards = defaultList.map( eve => {
          return(    
