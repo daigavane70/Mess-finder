@@ -13,21 +13,22 @@ const ListOptions = () => {
          ) });
 
     return (
-        <div className='container-fluid text-center'>
+        <div className='container-fluid text-center options'>
 
-            <h2>Search Results</h2>
+            <h1>Search Results</h1>
 
             <div className='row'>
 
                 {/* for Filters */}
-                <div className='col-lg-4 col-md-4 filters'>
-                    <Filter/>
+                <div className='col-lg-4 col-md-4'>
+                    <hr/><h3>Filters</h3><hr/>
+                    <Filter className='filters'/>
                 </div>
 
                 {/* for Cards */}
-                <div className='col-lg-8 text-center cards'>
-                    <hr/> Cards <hr/>
-                    <div className='container-fluid row'>
+                <div className='col-lg-8 text-center'>
+                    <hr/><h3> Cards </h3><hr/>
+                    <div className='container-fluid row cards'>
                         {cards}
                     </div>
                 </div>

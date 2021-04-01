@@ -1,9 +1,13 @@
+.options{
+    height: 100vh;
+}
+
 .cards{
     height: 100vh;
     overflow-y: scroll;
 }
 
 .filters{
-    max-height: 100vh;
+    max-height: inherit;
     overflow-y: scroll;
 }
