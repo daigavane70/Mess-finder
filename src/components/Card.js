@@ -2,7 +2,6 @@ import React from 'react';
 import '../assets/Styles/Card.css';
 import reactLogo from '../assets/Images/logo.svg';
 
-
 export default function Card({details}) {
     return (
         <div className='col-lg-4 col-sm-6 mess-card p-1'>
