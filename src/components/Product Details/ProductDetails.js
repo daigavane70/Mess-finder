@@ -1,7 +1,7 @@
 import logo from '../../assets/Images/Product details/test1.jpg';
 import { useState } from 'react';
 import React, { Component } from 'react';
-import { Card, Button, Accordion, Container, Row, Col, Carousel } from 'react-bootstrap';
+import { Card, Button, Accordion, Container, Row, Col, Carousel, Jumbotron } from 'react-bootstrap';
 import './ProductDetails.css';
 import { MDBMedia } from 'mdbreact';
 const ProductDetails = () => {
@@ -12,137 +12,167 @@ const ProductDetails = () => {
     ]);
 
     return (
+
         <div>
-            <section id="top">
-                <Container fluid>
-
-                    <div className="container-sm" id="banner">
-                        <Row>
-                            <Col >
-                                <div >
-                                    <img src={logo} alt="image of mess" />
-                                </div>
-                                {/* <div className="col-xs-5" id="name">
-                <h1>{product[0].name}</h1>
-                <h3>Address: <span>{product[0].body}
-                </span></h3>
-                <h5>Contact at :<span>{product[0].contact}
-                </span> </h5>
-            </div>*/ }
-                            </Col>
-                            <Col >
-                                {/*<div class="card" id="mess-head">
-                    <div class="card-header" style={{ textAlign: 'center' }}>
-                        {product[0].name}
+            <div className="top-section">
+                <Jumbotron fluid style={{ backgroundColor: "gold" }}>
+                    <Container >
+                        <h1>
+                            MESS NAME
+                        </h1>
+                        <i>
+                            <p>
+                                Address: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facere, unde? Aliquam voluptates in labore placeat fugit nisi accusantium blanditiis ratione expedita facere, dolore tempora deserunt dolor. Quisquam omnis doloribus impedit.
+                            </p>
+                        </i>
+                    </Container>
+                </Jumbotron>
+            </div>
+            <div>
+                <Container >
+                    <div>
+                        <h2>
+                            About Us
+                    </h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, repudiandae cumque? Eius nesciunt nobis unde delectus aspernatur necessitatibus in, quia perspiciatis doloremque, dolores minus dicta quos repudiandae tenetur ab nulla!</p>
                     </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">Address: <span>{product[0].body}
-                        </span></li>
-                        <li class="list-group-item">Call : {product[0].contact}</li>
-                        <li class="list-group-item">Timing</li>
-                    </ul>
-                </div>*/}
-                                <div className="container-sm" id="mess-head">
-                                    <h1 >Mess Name</h1>
-                                    <h3>Address 1: <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus optio dolores deserunt, saepe numquam possimus quas quasi magnam! Molestiae maiores iure rem? Ut saepe quam corporis minima error recusandae facere.</span></h3>
-                                    <h3>Rating:<i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i>
-                                    </h3>
-                                </div>
-                            </Col>
-                        </Row>
+                    <div className="middle">
+                        <h1>
+                            Gallery
+                        </h1>
+                        <Carousel>
+                            <Carousel.Item>
+                                <img
+                                    className="d-block w-100"
+                                    src="https://unsplash.com/photos/-YHSwy6uqvk"
+                                    alt="First slide"
+                                />
+                                <Carousel.Caption>
+                                    <h3>First slide label</h3>
+                                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                                </Carousel.Caption>
+                            </Carousel.Item>
+                            <Carousel.Item>
+                                <img
+                                    className="d-block w-100"
+                                    src="holder.js/800x400?text=Second slide&bg=282c34"
+                                    alt="Second slide"
+                                />
+
+                                <Carousel.Caption>
+                                    <h3>Second slide label</h3>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                </Carousel.Caption>
+                            </Carousel.Item>
+                            <Carousel.Item>
+                                <img
+                                    className="d-block w-100"
+                                    src="holder.js/800x400?text=Third slide&bg=20232a"
+                                    alt="Third slide"
+                                />
+
+                                <Carousel.Caption>
+                                    <h3>Third slide label</h3>
+                                    <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                                </Carousel.Caption>
+                            </Carousel.Item>
+                        </Carousel>
+
                     </div>
-
-                </Container>
-            </section>
-            <section id="middle">
-                <Container className="details">
-
-                    <Row>
-                        <Col>
-                            <div className="side-section">
-                                <Accordion defaultActiveKey="0">
-                                    <Card>
-                                        <Accordion.Toggle as={Card.Header} eventKey="0">
-                                            Directions
+                    <br></br>
+                    <h2>Details</h2>
+                    <div>
+                        <Accordion defaultActiveKey="0" className="details">
+                            <Card>
+                                <Accordion.Toggle as={Card.Header} eventKey="0">
+                                    Directions
     </Accordion.Toggle>
-                                        <Accordion.Collapse eventKey="0">
-                                            <Card.Body><a href="#" class="link-primary">See directions</a></Card.Body>
-                                        </Accordion.Collapse>
-                                    </Card>
-                                    <Card>
-                                        <Accordion.Toggle as={Card.Header} eventKey="1">
-                                            Food Type
+                                <Accordion.Collapse eventKey="0">
+                                    <Card.Body><a href="#" class="link-primary">See directions</a></Card.Body>
+                                </Accordion.Collapse>
+                            </Card>
+                            <Card>
+                                <Accordion.Toggle as={Card.Header} eventKey="1">
+                                    Food Type
     </Accordion.Toggle>
-                                        <Accordion.Collapse eventKey="1">
-                                            <Card.Body><li>
-                                                <span class="badge bg-success text-light">Veg</span>
-                                            </li>
-                                                <li>
-                                                    <span class="badge bg-danger text-light">Non veg</span>
-                                                </li></Card.Body>
-                                        </Accordion.Collapse>
-                                    </Card>
-                                    <Card>
-                                        <Accordion.Toggle as={Card.Header} eventKey="2">
-                                            Timings
+                                <Accordion.Collapse eventKey="1">
+                                    <Card.Body><li>
+                                        <span class="badge bg-success text-light">Veg</span>
+                                    </li>
+                                        <li>
+                                            <span class="badge bg-danger text-light">Non veg</span>
+                                        </li></Card.Body>
+                                </Accordion.Collapse>
+                            </Card>
+                            <Card>
+                                <Accordion.Toggle as={Card.Header} eventKey="2">
+                                    Timings
     </Accordion.Toggle>
-                                        <Accordion.Collapse eventKey="2">
-                                            <Card.Body><a href="#" class="link-primary"></a><li>
-                                                Monday: 7am-11pm
+                                <Accordion.Collapse eventKey="2">
+                                    <Card.Body><a href="#" class="link-primary"></a><li>
+                                        Monday: 7am-11pm
       </li><li>
-                                                    Tuesday: 7am-11pm
+                                            Tuesday: 7am-11pm
       </li><li>
-                                                    Wednesday: 7am-11pm
+                                            Wednesday: 7am-11pm
       </li><li>
-                                                    Thursday: 7am-11pm
+                                            Thursday: 7am-11pm
       </li><li>
-                                                    Friday: 7am-11pm
+                                            Friday: 7am-11pm
       </li><li>
-                                                    Saturday: 7am-11pm
+                                            Saturday: 7am-11pm
       </li><li>
-                                                    Sunday: 7am-6pm
+                                            Sunday: 7am-6pm
       </li></Card.Body>
-                                        </Accordion.Collapse>
-                                    </Card>
-                                    <Card>
-                                        <Accordion.Toggle as={Card.Header} eventKey="3">
-                                            Food Cuisine
+                                </Accordion.Collapse>
+                            </Card>
+                            <Card>
+                                <Accordion.Toggle as={Card.Header} eventKey="3">
+                                    Food Cuisine
     </Accordion.Toggle>
-                                        <Accordion.Collapse eventKey="3">
-                                            <Card.Body><li>
-                                                Maharashtrian
+                                <Accordion.Collapse eventKey="3">
+                                    <Card.Body><li>
+                                        Maharashtrian
       </li>
-                                                <li>
-                                                    South Indian
+                                        <li>
+                                            South Indian
       </li>
-                                                <li>
-                                                    North Indian
+                                        <li>
+                                            North Indian
       </li></Card.Body>
-                                        </Accordion.Collapse>
-                                    </Card>
+                                </Accordion.Collapse>
+                            </Card>
 
-                                </Accordion>
-
-                            </div>
-                        </Col>
-                        <Col>
-                            <div className="about-mess">
-                                <h1>About mess</h1>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque dignissimos voluptatum, illo neque quisquam sequi recusandae! Quisquam sint enim tempora voluptatibus incidunt assumenda facere ratione, nemo adipisci nobis magni sequi!</p>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque dignissimos voluptatum, illo neque quisquam sequi recusandae! Quisquam sint enim tempora voluptatibus incidunt assumenda facere ratione, nemo adipisci nobis magni sequi!</p>
-                            </div>
-                        </Col>
-                    </Row>
-
+                        </Accordion>
+                    </div>
+                    <br />
+                    <div>
+                        <h2>Reviews</h2>
+                        <div>
+                            <Card>
+                                <Card.Header><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i></Card.Header>
+                                <Card.Body>
+                                    <blockquote className="blockquote mb-0">
+                                        <p>
+                                            {' '}
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere
+        erat a ante.{' '}
+                                        </p>
+                                        <footer className="blockquote-footer">
+                                            <cite title="Source Title">Customer 1</cite>
+                                        </footer>
+                                    </blockquote>
+                                </Card.Body>
+                            </Card>
+                        </div>
+                        <br />
+                        <h3>Submit review</h3>
+                        
+                    </div>
                 </Container>
-            </section>
-            <section id="gallery">
+            </div>
 
-            </section>
         </div>
-
-
-
 
 
     );
