@@ -4,6 +4,7 @@ import Navbar from './Components/Navbar/index.js';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'; 
 import Home from './Pages/Home/Home'; 
  import About from './Pages/AboutUs/About';
+ import Details from './Pages/Profile/Profile';
  import Contact from './Pages/ContactUs/ContactUs'; 
  import Search from './Pages/Search/Search'; 
 // import Team from './Pages/Team/team'; 
@@ -19,6 +20,7 @@ function App() {
         <Route path='/about' component={About} /> 
         <Route path='/contact' component={Contact} /> 
         <Route path='/search' component={Search} /> 
+        <Route path='/details' component={Details} /> 
         <Route path='/' exact component={Home} /> 
          
       </Switch> 
