@@ -4,9 +4,9 @@ import React, { Component } from 'react';
 import { Card, Button, Accordion, Container, Row, Col, Carousel, Jumbotron } from 'react-bootstrap';
 import './ProductDetails.css';
 import { MDBMedia } from 'mdbreact';
-import img1 from '../../assets/Images/Product details/img1.jpg';
-import img2 from '../../assets/Images/Product details/img2.jpg';
-import img3 from '../../assets/Images/Product details/img3.jpg';
+import img1 from '../../assets/images/Product details/img1.jpg';
+import img2 from '../../assets/images/Product details/img2.jpg';
+import img3 from '../../assets/images/Product details/img3.jpg';
 
 const ProductDetails = () => {
   const [product, setname] = useState([

@@ -12,6 +12,10 @@ import {
   Jumbotron,
 } from "react-bootstrap";
 import "./ProductDetails.css";
+import img1 from '../../assets/Images/Product details/img1.jpg';
+import img2 from '../../assets/Images/Product details/img2.jpg';
+import img3 from '../../assets/Images/Product details/img3.jpg';
+
 const ProductDetails = () => {
   const [product, setname] = useState([
     { name: "Mess 1", body: "Pune 1", contact: 1111111, id: 1 },
