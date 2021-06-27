@@ -1,6 +1,6 @@
 import React from 'react';
-import '../assets/Styles/Card.css';
-import reactLogo from '../assets/Images/logo.svg';
+import '../assets/styles/Card.css';
+// import reactLogo from '../assets/Images/logo.svg';
 
 export default function Card({details}) {
     return (
