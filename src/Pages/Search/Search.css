@@ -1,0 +1,38 @@
+.options{
+    height: 100vh;
+}
+
+.cards{
+    height: 100vh;
+    overflow-y: scroll;
+}
+
+.filters{
+    max-height: inherit;
+    overflow-y: scroll;
+}
+
+.search-bar-container{
+    margin: 10px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    /* background-color: cadetblue; */
+    padding-block: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+}
+.search-bar-container i{
+    cursor: pointer;
+}
+
+.search-bar-container input{
+    height: 100%;
+    border: none;
+    border-left: 1px solid black;
+}
+
+.search-bar-container input:focus{
+    outline: none;
+}
