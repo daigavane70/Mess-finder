@@ -3,13 +3,15 @@ import Card from "../../Components/Card";
 import "./Search.css";
 import { defaultList } from "../../Components/data";
 import Filter from "../../Components/Filter";
-import {useState} from 'react'
+import { useState } from "react";
 
 const ListOptions = () => {
+  const [filters, setFilters] = useState([{ type: "veg" }]);
+  const [displayList, setDisplayList] = useState();
 
-  const [filters, setFilters] = useState([
-    {type: 'veg'},
-  ]);
+  const filterNow = () => {
+    console.log("Hello");
+  }
 
   let cards = defaultList.map((eve) => {
     return <Card details={eve}></Card>;
@@ -19,11 +21,13 @@ const ListOptions = () => {
     <div className="container-fluid text-center options">
       <div className="container">
         <div className="search-bar-container row">
-          <i class="fas fa-search col-1" onClick={() => document.getElementById('search-bar').focus()} />
-          <input className="col-11" placeholder="Search" id='search-bar'/>
+          <i
+            class="fas fa-search col-1"
+            onClick={() => document.getElementById("search-bar").focus()}
+          />
+          <input className="col-11" placeholder="Search" id="search-bar" />
         </div>
       </div>
-
       <div className="row">
         {/* for Filters */}
         <div className="col-lg-3 col-md-4">
