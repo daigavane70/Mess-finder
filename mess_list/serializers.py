@@ -4,9 +4,4 @@ from .models import Mess
 class MessSerializer(serializers.ModelSerializer):
     class Meta:
         model=Mess
-        fields=['name','owner','cuisine_type']
-
-class MessDetailSerializer(serializers.ModelSerializer):
-    class Meta:
-        model=Mess
-        fields='_all_'
+        fields='__all__'
