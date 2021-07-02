@@ -1,5 +1,4 @@
 import React from "react";
-<<<<<<< HEAD
 // import {
 //   MDBRow,
 //   MDBCol,
@@ -9,9 +8,6 @@ import React from "react";
 //   MDBBtn,
 //   MDBInput,
 // } from "mdbreact";
-=======
-import { MDBRow, MDBContainer, MDBCol, MDBCard, MDBCardBody, MDBIcon, MDBBtn, MDBInput } from "mdbreact";
->>>>>>> origin/main
 
 const ContactPage = () => {
   return (
@@ -20,7 +16,6 @@ const ContactPage = () => {
         Contact us
       </h2>
       <p className="text-center w-responsive mx-auto pb-5">
-<<<<<<< HEAD
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, error
         amet numquam iure provident voluptate esse quasi, veritatis totam
         voluptas nostrum quisquam eum porro a pariatur veniam.
@@ -109,67 +104,6 @@ const ContactPage = () => {
         </div>
         
         <div className="col-lg-7">
-=======
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit,
-        error amet numquam iure provident voluptate esse quasi, veritatis
-        totam voluptas nostrum quisquam eum porro a pariatur veniam.
-      </p>
-      {/* <MDBRow>
-        <MDBCol lg="5" className="lg-0 mb-4">
-          <MDBCard>
-            <MDBCardBody>
-              <div className="form-header blue accent-1">
-                <h3 className="mt-2">
-                  <MDBIcon icon="envelope" /> Write to us:
-                </h3>
-              </div>
-              <p className="dark-grey-text">
-                We'll write rarely, but only the best content.
-              </p>
-              <div className="md-form">
-                <MDBInput
-                  icon="user"
-                  label="Your name"
-                  iconClass="grey-text"
-                  type="text"
-                  id="form-name"
-                />
-              </div>
-              <div className="md-form">
-                <MDBInput
-                  icon="envelope"
-                  label="Your email"
-                  iconClass="grey-text"
-                  type="text"
-                  id="form-email"
-                />
-              </div>
-              <div className="md-form">
-                <MDBInput
-                  icon="tag"
-                  label="Subject"
-                  iconClass="grey-text"
-                  type="text"
-                  id="form-subject"
-                />
-              </div>
-              <div className="md-form">
-                <MDBInput
-                  icon="pencil-alt"
-                  label="Icon Prefix"
-                  iconClass="grey-text"
-                  type="textarea"
-                  id="form-text"
-                />
-              </div>
-              <div className="text-center">
-                <MDBBtn color="light-blue">Submit</MDBBtn>
-              </div>
-            </MDBCardBody>
-          </MDBCard>
-        </MDBCol>
-        <MDBCol lg="7">
->>>>>>> origin/main
           <div
             id="map-container"
             className="rounded z-depth-1-half map-container"
@@ -185,7 +119,6 @@ const ContactPage = () => {
             />
           </div>
           <br />
-<<<<<<< HEAD
 
           <div className="row text-center">
 
@@ -321,35 +254,3 @@ export default ContactPage;
     </MDBRow>
   </MDBCol>
 </MDBRow> */
-=======
-          <MDBRow className="text-center">
-            <MDBCol md="4">
-              <MDBBtn tag="a" floating color="blue" className="accent-1">
-                <MDBIcon icon="map-marker-alt" />
-              </MDBBtn>
-              <p>New York, 94126</p>
-              <p className="mb-md-0">United States</p>
-            </MDBCol>
-            <MDBCol md="4">
-              <MDBBtn tag="a" floating color="blue" className="accent-1">
-                <MDBIcon icon="phone" />
-              </MDBBtn>
-              <p>+ 01 234 567 89</p>
-              <p className="mb-md-0">Mon - Fri, 8:00-22:00</p>
-            </MDBCol>
-            <MDBCol md="4">
-              <MDBBtn tag="a" floating color="blue" className="accent-1">
-                <MDBIcon icon="envelope" />
-              </MDBBtn>
-              <p>info@gmail.com</p>
-              <p className="mb-md-0">sale@gmail.com</p>
-            </MDBCol>
-          </MDBRow>
-        </MDBCol>
-      </MDBRow> */}
-    </div>
-  );
-}
-
-export default ContactPage;
->>>>>>> origin/main
