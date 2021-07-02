@@ -1,31 +1,34 @@
 import React from "react";
-import "../assets/Styles/Card.css";
-import reactLogo from "../assets/Images/logo.svg";
+import "../assets/styles/Card.css";
+// import reactLogo from "../assets/Images/logo.svg";
 
 export default function Filter({ details }) {
   return (
     <div className="form-group">
-      <div class="input-group mb-3">
-        <label class="input-group-text" for="inputGroupSelect01">
-          Type
-        </label>
-        <select class="form-select" id="inputGroupSelect01">
+      <div className="row">
+        <div className="col-4">
+          <label className="input-group-text " for="inputGroupSelect01">
+            Type
+          </label>
+        </div>
+        <select className="form-select col-8" id="inputGroupSelect01">
           <option selected>Choose...</option>
           <option value="1">Veg</option>
           <option value="2">Non-Veg</option>
         </select>
       </div>
-      <label for="customRange1" class="form-label">
+      <div className="input-group mb-3"></div>
+      <label for="customRange1" className="form-label col-6">
         Example range
       </label>
-      <input type="range" class="form-range" id="customRange1"></input>
-      <div class="form-check form-switch my-2 text-center">
+      <input type="range" className="form-range col-6" id="customRange1" />
+      <div className="form-check form-switch my-2 text-center">
         <input
-          class="form-check-input"
+          className="form-check-input"
           type="checkbox"
           id="flexSwitchCheckChecked"
         />
-        <label class="form-check-label" for="flexSwitchCheckChecked">
+        <label className="form-check-label" for="flexSwitchCheckChecked">
           Tiffin Services
         </label>
       </div>

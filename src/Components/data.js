@@ -1,6 +1,6 @@
-import img1 from '../assets/Images/res1.jpg';
-import img2 from '../assets/Images/res2.jpeg';
-import img3 from '../assets/Images/res3.jpeg';
+import img1 from '../assets/images/res1.jpg';
+import img2 from '../assets/images/res2.jpeg';
+import img3 from '../assets/images/res3.jpeg';
 
 export const defaultList = [
     {
