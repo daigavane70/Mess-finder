@@ -8,8 +8,8 @@ import { useState, useEffect } from "react";
 const ListOptions = () => {
   const [filters, setFilters] = useState({
     name: "",
-    rating: "",
-    price: "",
+    rating: "0",
+    price: Infinity,
   });
   const [cards, setCards] = useState([]);
 

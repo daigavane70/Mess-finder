@@ -7,7 +7,7 @@ const getStars = (number) => {
   for (var i = 0; i < number; i++) {
     stars.push(<i class="fas fa-star"></i>);
   }
-  return stars
+  return stars;
 };
 
 export default function Card({ details }) {
