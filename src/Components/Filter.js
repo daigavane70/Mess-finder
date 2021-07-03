@@ -1,8 +1,14 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "../assets/styles/Card.css";
 // import reactLogo from "../assets/Images/logo.svg";
 
-export default function Filter({ details }) {
+export default function Filter(props) {
+  const [filters, setFilters] = useState("");
+
+  useEffect( () => {
+    
+  }, [filters] )
+
   return (
     <div className="form-group">
       <div className="row">
@@ -15,6 +21,23 @@ export default function Filter({ details }) {
           <option selected>Choose...</option>
           <option value="1">Veg</option>
           <option value="2">Non-Veg</option>
+        </select>
+      </div>
+      <div className="row">
+        <div className="col-4">
+          <label className="input-group-text " for="rating">
+            Rating
+          </label>
+        </div>
+        <select className="form-select col-8" id="rating">
+          <option selected value="">
+            Choose...
+          </option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
         </select>
       </div>
       <div className="input-group mb-3"></div>

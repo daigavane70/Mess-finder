@@ -20,7 +20,7 @@
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: rgb(167, 167, 167); 
+  /* background: rgb(167, 167, 167);  */
 }
 
 /* The track NOT covered by the handle.

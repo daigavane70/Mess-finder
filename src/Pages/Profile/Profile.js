@@ -38,31 +38,28 @@ const ProductDetails = () => {
         "Sunday 10-6",
       ],
       foodCuisine: ["North Indian", "Chinese", "South Indian"],
-      
     },
-    review:[
-      {customerName:"Shivendra",rating:"Very Good",stars:4},
-      {customerName:"Vedant",rating:"Awesome",stars:5},
-      {customerName:"Amruta",rating:"Very Good",stars:3},
+    review: [
+      { customerName: "Shivendra", rating: "Very Good", stars: 4 },
+      { customerName: "Vedant", rating: "Awesome", stars: 5 },
+      { customerName: "Amruta", rating: "Very Good", stars: 3 },
     ],
     contact: 1111111,
     id: 1,
   });
-  const getStars=(stars)=>{
-    var lis=[]
-   
-    for(var i=0;i<stars;i++){
-     
-     lis.push(<i class="fa fa-star" aria-hidden="true"></i>)
-  }
-  return lis;
-  
-  }
-  const addReview=(event)=>{
-    let reviewList=product.review;
+  const getStars = (stars) => {
+    var lis = [];
+
+    for (var i = 0; i < stars; i++) {
+      lis.push(<i class="fa fa-star" aria-hidden="true"></i>);
+    }
+    return lis;
+  };
+  const addReview = (event) => {
+    let reviewList = product.review;
     reviewList.push(event);
-    setProduct({...product,review:reviewList}); //
-  }
+    setProduct({ ...product, review: reviewList }); //
+  };
   return (
     <div>
       <div className="top-section">
@@ -187,35 +184,28 @@ const ProductDetails = () => {
           <div>
             <h2>Reviews</h2>
             <div>
-              {product.review.map(review=>{
+              {product.review.map((review) => {
                 return (
                   <Card>
-                <Card.Header>
-                  {
-                    getStars(review.stars)
-                  }
-                  
-                  
-                </Card.Header>
-                <Card.Body>
-                  <blockquote className="blockquote mb-0">
-                    <p>
-                      {review.rating}
-                    </p>
-                    <footer className="blockquote-footer">
-                      <cite title="Source Title">{review.customerName}</cite>
-                    </footer>
-                  </blockquote>
-                </Card.Body>
-              </Card>
-
-                )
+                    <Card.Header>{getStars(review.stars)}</Card.Header>
+                    <Card.Body>
+                      <blockquote className="blockquote mb-0">
+                        <p>{review.rating}</p>
+                        <footer className="blockquote-footer">
+                          <cite title="Source Title">
+                            {review.customerName}
+                          </cite>
+                        </footer>
+                      </blockquote>
+                    </Card.Body>
+                  </Card>
+                );
               })}
             </div>
             <br />
             <h3>Submit review</h3>
             <div className="review">
-              <ReviewForm addReview={addReview} /> 
+              <ReviewForm addReview={addReview} />
             </div>
           </div>
         </Container>
@@ -225,3 +215,5 @@ const ProductDetails = () => {
 };
 
 export default ProductDetails;
+
+// post ( id, {customerName: , review: , rating: } )

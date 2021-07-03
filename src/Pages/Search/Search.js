@@ -3,29 +3,62 @@ import Card from "../../Components/Card";
 import "./Search.css";
 import { defaultList } from "../../Components/data";
 import Filter from "../../Components/Filter";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const ListOptions = () => {
-  const [filters, setFilters] = useState([{ type: "veg" }]);
-  const [displayList, setDisplayList] = useState();
-
-  const filterNow = () => {
-    console.log("Hello");
-  }
-
-  let cards = defaultList.map((eve) => {
-    return <Card details={eve}></Card>;
+  const [filters, setFilters] = useState({
+    name: "",
+    rating: "",
+    price: "",
   });
+  const [cards, setCards] = useState([]);
+
+  const applyFilters = (cardList) => {
+    let newCards = cardList;
+
+    // filtering Based on search
+    if (filters.name !== "") {
+      newCards = newCards.filter((item) =>
+        item.name.toUpperCase().includes(filters.name.toUpperCase())
+      );
+    }
+
+    // filtering based on rating
+    if (filters.rating !== "") {
+      newCards = newCards.filter((item) => item.rating >= filters.rating);
+    }
+
+    // filtering based on price
+    if (filters.price !== "") {
+      newCards = newCards.filter((item) => item.price <= filters.price);
+    }
+
+    return newCards;
+  };
+
+  useEffect(() => {
+    let filteredCards = applyFilters(defaultList);
+    let newCards = filteredCards.map((eve) => {
+      return <Card details={eve}></Card>;
+    });
+    setCards(newCards);
+  }, [filters]);
 
   return (
-    <div className="container-fluid text-center options">
+    <div className="container-fluid text-center options py-2">
       <div className="container">
         <div className="search-bar-container row">
           <i
             class="fas fa-search col-1"
             onClick={() => document.getElementById("search-bar").focus()}
           />
-          <input className="col-11" placeholder="Search" id="search-bar" />
+          <input
+            className="col-11"
+            placeholder="Search"
+            id="search-bar"
+            value={filters.name}
+            onChange={(e) => setFilters({ ...filters, name: e.target.value })}
+          />
         </div>
       </div>
       <div className="row">
@@ -34,14 +67,20 @@ const ListOptions = () => {
           <hr />
           <h3>Filters</h3>
           <hr />
-          <Filter className="filters" />
+          <Filter
+            changeFilters={setFilters}
+            filters={filters}
+            className="filters"
+          />
         </div>
         {/* for Cards */}
         <div className="col-lg-9 text-center">
           <hr />
-          <h3> Cards </h3>
+          <h3 className="search-results-title"> Results </h3>
           <hr />
-          <div className="container-fluid row cards">{cards}</div>
+          <div className="container-fluid py-0 cards">
+            <div className="row"> {cards} </div>
+          </div>
         </div>
       </div>
     </div>

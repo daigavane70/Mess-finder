@@ -36,3 +36,9 @@
 .search-bar-container input:focus{
     outline: none;
 }
+
+@media (max-width: 500px) {
+    .cards{
+        height: auto;
+    }
+}

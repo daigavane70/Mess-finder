@@ -1,4 +1,35 @@
-.logo img{
-    height: 100%;
-    width: 100%;
+.mess-card {
+  background-color: rgba(0, 0, 0, 0.05);
+  padding: 0px;
+  padding-inline: 5px;
+}
+
+.mess-card .logo img {
+  width: 100%;
+}
+
+.mess-card .title {
+  font-family: fantasy;
+  font-size: 25px;
+  margin-block: 5px;
+}
+
+.mess-card .rating {
+  font-size: 20px;
+  font-weight: 400;
+  margin-bottom: 5px;
+  color: rgb(238, 202, 0);
+}
+
+.mess-card .price {
+  font-weight: 400;
+  font-size: 20px;
+  color: red;
+}
+
+.mess-card .learn-more {
+  width: 100%;
+  cursor: pointer;
+  font-weight: bolder;
+  margin-block: 5px;
 }
