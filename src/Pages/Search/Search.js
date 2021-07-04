@@ -22,17 +22,15 @@ const ListOptions = () => {
         item.name.toUpperCase().includes(filters.name.toUpperCase())
       );
     }
-
     // filtering based on rating
     if (filters.rating !== "") {
       newCards = newCards.filter((item) => item.rating >= filters.rating);
     }
-
     // filtering based on price
     if (filters.price !== "") {
       newCards = newCards.filter((item) => item.price <= filters.price);
     }
-
+    
     return newCards;
   };
 

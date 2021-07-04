@@ -12,7 +12,7 @@ const getStars = (number) => {
 
 export default function Card({ details }) {
   return (
-    <div className="col-lg-4 col-12 p-1">
+    <div className="col-md-4 col-12 p-1">
       <div className="mess-card">
         <div className="logo">
           <img src={details.image}></img>
@@ -20,7 +20,7 @@ export default function Card({ details }) {
         <div className="title">{details.name}</div>
         <div className="row">
           <div className="col-6 rating">{getStars(details.rating)}</div>
-          <div className="col-6 price">₹{details.monthlyPrices}/Month</div>
+          <div className="col-6 price">₹{details.price}/Month</div>
         </div>
         <div className="learn-more"> Learn More {">>>"} </div>
       </div>

@@ -51,7 +51,7 @@ export default function Filter(props) {
       </div>
       <div className="input-group mb-3"></div>
       <label for="customRange1" className="form-label col-6">
-        Example range
+        Range: upto {filters.price}
       </label>
       <input
         type="range"

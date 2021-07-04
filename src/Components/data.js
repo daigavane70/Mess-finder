@@ -4,12 +4,22 @@ import img3 from "../assets/images/res3.jpeg";
 
 export const defaultList = [
   {
+    id: '',     //Primary Key
     name: "Name1",
     address:
-      "Survey No. 27, Near, Trimurti Chowk, Bharati Vidyapeeth Campus, Dhankawadi, Pune, Maharashtra 411043",
+        {
+            addressLine: '',
+            pincode: '',
+            city: ''
+        },
+    tiffinService: true,
     rating: 4,
     price: 5000,
-    image: img1,
+    image: img1,    //image Link
+    owner: {
+        name: '',   //name of owner
+        id: '',     //primary key
+    }        
   },
   {
     name: "Name2",
