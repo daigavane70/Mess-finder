@@ -153,3 +153,9 @@
     width: 100%;
   }
 }
+
+.auth-error{
+  display: block;
+  color: red;
+  margin-top: 10px;
+}

@@ -2,18 +2,20 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import {
   FacebookLoginButton,
-  InstagramLoginButton
+  InstagramLoginButton,
 } from "react-social-login-buttons";
 
 class SignInForm extends Component {
   constructor() {
     super();
-
     this.state = {
       email: "",
-      password: ""
+      password: "",
+      errors: {
+        email: "",
+        password: "",
+      },
     };
-
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -22,19 +24,37 @@ class SignInForm extends Component {
     let target = event.target;
     let value = target.type === "checkbox" ? target.checked : target.value;
     let name = target.name;
-
     this.setState({
-      [name]: value
+      [name]: value,
     });
   }
 
   handleSubmit(event) {
     event.preventDefault();
 
+    let emailError = "";
+    let passwordError = "";
+
+    if (this.state.email === "") {
+      emailError = "E-Mail cannot be blank";
+    }
+
+    if (this.state.password === "") {
+      passwordError = "Password cannot be empty";
+    }
+
+    this.setState({
+      ...this.state,
+      errors: {
+        ...this.state.errors,
+        email: emailError,
+        password: passwordError,
+      },
+    });
+
     console.log("The form was submitted with the following data:");
     console.log(this.state);
   }
-
   render() {
     return (
       <div className="formCenter">
@@ -52,8 +72,8 @@ class SignInForm extends Component {
               value={this.state.email}
               onChange={this.handleChange}
             />
+            <span className="auth-error">{this.state.errors.email}</span>
           </div>
-
           <div className="formField">
             <label className="formFieldLabel" htmlFor="password">
               Password
@@ -67,20 +87,18 @@ class SignInForm extends Component {
               value={this.state.password}
               onChange={this.handleChange}
             />
+            <span className="auth-error">{this.state.errors.password}</span>
           </div>
-
           <div className="formField">
             <button className="formFieldButton">Sign In</button>{" "}
             <Link to="/" className="formFieldLink">
               Create an account
             </Link>
           </div>
-
           <div className="socialMediaButtons">
             <div className="facebookButton">
               <FacebookLoginButton onClick={() => alert("Hello")} />
             </div>
-
             <div className="instagramButton">
               <InstagramLoginButton onClick={() => alert("Hello")} />
             </div>

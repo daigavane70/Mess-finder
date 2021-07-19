@@ -12,22 +12,28 @@ const ListOptions = () => {
     price: Infinity,
   });
   const [cards, setCards] = useState([]);
-
   const applyFilters = (cardList) => {
-    // let newCards = cardList;
-    let newCards = []
-    let filterKeyPoints = []
-
+    let newCards = cardList;
+    // let newCards = [];
+    let filterKeyPoints = [];
     // filtering Based on search
+
     if (filters.name !== "") {
-      filterKeyPoints = filters.name.split(" ");
-      console.log(filterKeyPoints, newCards)
-      filterKeyPoints.map((key) => {
-        newCards = [ ...newCards, ...cardList.filter((item) =>
-          item.name.toUpperCase().includes(key.toUpperCase())
-          // item.name.toUpperCase().includes(filters.name.toUpperCase())
-        )];
-      });
+      // filterKeyPoints = filters.name.split(" ");
+      // console.log(filterKeyPoints, newCards);
+      // filterKeyPoints.map((key) => {
+      //   newCards = [
+      //     ...newCards,
+      //     ...cardList.filter(
+      //       (item) => item.name.toUpperCase().includes(key.toUpperCase())
+      //       // item.name.toUpperCase().includes(filters.name.toUpperCase())
+      //     ),
+      //   ];
+      // });
+
+      newCards = cardList.filter((item) =>
+        item.name.toUpperCase().includes(filters.name.toUpperCase())
+      );
     }
     // filtering based on rating
     if (filters.rating !== "") {
@@ -40,7 +46,6 @@ const ListOptions = () => {
 
     return newCards;
   };
-
   useEffect(() => {
     let filteredCards = applyFilters(defaultList);
     let newCards = filteredCards.map((eve) => {
@@ -48,7 +53,6 @@ const ListOptions = () => {
     });
     setCards(newCards);
   }, [filters]);
-
   return (
     <div className="container-fluid text-center options py-2">
       <div className="container">

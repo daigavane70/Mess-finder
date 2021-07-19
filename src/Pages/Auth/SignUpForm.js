@@ -9,7 +9,13 @@ class SignUpForm extends Component {
       email: "",
       password: "",
       name: "",
-      hasAgreed: false
+      hasAgreed: false,
+      errors: {
+        name: "",
+        password: "",
+        email: "",
+        hasAgreed: "",
+      },
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -22,12 +28,37 @@ class SignUpForm extends Component {
     let name = target.name;
 
     this.setState({
-      [name]: value
+      [name]: value,
     });
   }
 
   handleSubmit(e) {
     e.preventDefault();
+
+    let error = {
+      name: "",
+      password: "",
+      email: "",
+      hasAgreed: "",
+    };
+
+    if (this.state.name === "") {
+      error.name = "Name cannot be empty";
+    }
+
+    if (this.state.password === "") {
+      error.password = "Password cannot be empty";
+    }
+
+    if (this.state.email === "") {
+      error.email = "Email cannot be empty";
+    }
+
+    if (!this.state.hasAgreed) {
+      error.hasAgreed = "You have not agreed to our Terms and Conditions";
+    }
+
+    this.setState({ ...this.state, errors: error });
 
     console.log("The form was submitted with the following data:");
     console.log(this.state);
@@ -50,6 +81,7 @@ class SignUpForm extends Component {
               value={this.state.name}
               onChange={this.handleChange}
             />
+            <span className="auth-error">{this.state.errors.name}</span>
           </div>
           <div className="formField">
             <label className="formFieldLabel" htmlFor="password">
@@ -64,6 +96,7 @@ class SignUpForm extends Component {
               value={this.state.password}
               onChange={this.handleChange}
             />
+            <span className="auth-error">{this.state.errors.password}</span>
           </div>
           <div className="formField">
             <label className="formFieldLabel" htmlFor="email">
@@ -78,6 +111,7 @@ class SignUpForm extends Component {
               value={this.state.email}
               onChange={this.handleChange}
             />
+            <span className="auth-error">{this.state.errors.email}</span>
           </div>
 
           <div className="formField">
@@ -93,6 +127,7 @@ class SignUpForm extends Component {
               <a href="null" className="formFieldTermsLink">
                 terms of service
               </a>
+              <span className="auth-error">{this.state.errors.hasAgreed}</span>
             </label>
           </div>
 
